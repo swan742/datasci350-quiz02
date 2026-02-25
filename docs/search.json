@@ -25,7 +25,7 @@
     "href": "map.html",
     "title": "Global Wealth Map",
     "section": "",
-    "text": "Interactive map: shows the GDP per Capita across the globe for the year 2007.\nimport pandas as pd import plotly.express as px\ndf = pd.read_csv(‘gapminder.csv’)\n\nFilter for the most recent year in the dataset\ndf_2007 = df[df[‘year’] == 2007]\nfig = px.choropleth(df_2007, locations=“country”, locationmode=“country names”, color=“gdp_per_capita”, hover_name=“country”, projection=“natural earth”, title=“GDP per Capita (2007)”, color_continuous_scale=px.colors.sequential.Plasma)\nfig.show()"
+    "text": "Interactive map: shows the GDP per Capita across the globe for the year 2007:\n\n\nCode\nimport pandas as pd\nimport plotly.express as px\n\ndf = pd.read_csv('gapminder.csv')\ndf_2007 = df[df['year'] == 2007]\n\nfig = px.choropleth(df_2007, \n                    locations=\"country\", \n                    locationmode=\"country names\", \n                    color=\"gdp_per_capita\", \n                    hover_name=\"country\", \n                    projection=\"natural earth\", \n                    title=\"GDP per Capita (2007)\", \n                    color_continuous_scale=px.colors.sequential.Plasma)\nfig.show()"
   },
   {
     "objectID": "country.html",
