@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Gapminder Data Analysis – Gapminder Analysis</title>
+<title>Global Wealth Map – Gapminder Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -91,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -107,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Country Analysis</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./map.html"> 
+    <a class="nav-link active" href="./map.html" aria-current="page"> 
 <span class="menu-text">Interactive Map</span></a>
   </li>  
 </ul>
@@ -127,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Gapminder Data Analysis</h1>
+<h1 class="title">Global Wealth Map</h1>
 </div>
 
 
@@ -144,14 +144,14 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The Gapminder dataset tracks health and wealth indicators for 142 countries over five decades （from 1952 to 2007）. It records values for life expectancy, GDP per capita, and population in every five years.</p>
-<section id="quick-links" class="level3">
-<h3 class="anchored" data-anchor-id="quick-links">Quick Links:</h3>
-<ul>
-<li><a href="./life-gdp.html">Life Expectancy and GDP per Capita</a></li>
-<li><a href="./life-population.html">Life Expectancy and Population</a></li>
-<li><a href="./country.html">Country Analysis</a></li>
-</ul>
+<p>Interactive map: shows the GDP per Capita across the globe for the year 2007.</p>
+<p>import pandas as pd import plotly.express as px</p>
+<p>df = pd.read_csv(‘gapminder.csv’)</p>
+<section id="filter-for-the-most-recent-year-in-the-dataset" class="level1">
+<h1>Filter for the most recent year in the dataset</h1>
+<p>df_2007 = df[df[‘year’] == 2007]</p>
+<p>fig = px.choropleth(df_2007, locations=“country”, locationmode=“country names”, color=“gdp_per_capita”, hover_name=“country”, projection=“natural earth”, title=“GDP per Capita (2007)”, color_continuous_scale=px.colors.sequential.Plasma)</p>
+<p>fig.show()</p>
 
 
 </section>

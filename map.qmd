@@ -1,0 +1,25 @@
+---
+title: "Global Wealth Map"
+---
+
+Interactive map: shows the GDP per Capita across the globe for the year 2007.
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+df = pd.read_csv('gapminder.csv')
+
+# Filter for the most recent year in the dataset
+df_2007 = df[df['year'] == 2007]
+
+fig = px.choropleth(df_2007, 
+                    locations="country", 
+                    locationmode="country names",
+                    color="gdp_per_capita",
+                    hover_name="country",
+                    projection="natural earth",
+                    title="GDP per Capita (2007)",
+                    color_continuous_scale=px.colors.sequential.Plasma)
+
+fig.show()

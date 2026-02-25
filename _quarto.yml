@@ -14,9 +14,11 @@ website:
         text: "Life Expectancy and Population"
       - href: country.qmd
         text: "Country Analysis"
+      - href: map.qmd
+        text: "Interactive Map"
 
 format:
   html:
     theme: cosmo
+    css: styles.css
     code-fold: true
-    
