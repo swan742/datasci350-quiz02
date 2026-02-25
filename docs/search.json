@@ -39,7 +39,7 @@
     "href": "index.html",
     "title": "Gapminder Data Analysis",
     "section": "",
-    "text": "The Gapminder dataset tracks health and wealth indicators for 142 countries over five decades （from 1952 to 2007）. It records values for life expectancy, GDP per capita, and population in every five years.\n\nQuick Links:\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis"
+    "text": "The Gapminder dataset tracks health and wealth indicators for 142 countries over five decades （from 1952 to 2007）. It records values for life expectancy, GDP per capita, and population in every five years.\n\nQuick Links:\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis\nInteractive Map of world GDP in 2007"
   },
   {
     "objectID": "life-population.html",

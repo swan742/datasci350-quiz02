@@ -8,3 +8,4 @@ The Gapminder dataset tracks health and wealth indicators for 142 countries over
 - [Life Expectancy and GDP per Capita](life-gdp.qmd)
 - [Life Expectancy and Population](life-population.qmd)
 - [Country Analysis](country.qmd)
+- [Interactive Map of world GDP in 2007](map.qmd)
