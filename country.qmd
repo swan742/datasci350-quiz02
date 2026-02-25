@@ -1,0 +1,47 @@
+---
+title: "Country Analysis: Changes Over Time"
+---
+
+This page examines how Life Expectancy, GDP per Capita, and Population have changed over time for **Botswana**. 
+
+```{python}
+#| label: fig-country-trends
+#| fig-cap: "Trends in Life Expectancy, GDP, and Population"
+
+import pandas as pd
+import plotly.express as px
+
+# 1. Load the data
+df = pd.read_csv('gapminder.csv')
+
+# 2. Filter for Botswana
+target_country = 'Botswana'
+country_df = df[df['country'] == target_country]
+
+# 3. a multi-line chart or a specific trend chart
+# plot Life Expectancy over the years
+fig = px.line(country_df, 
+              x="year", 
+              y="life_expectancy", 
+              title=f"Life Expectancy Trends in {target_country}",
+              markers=True,
+              labels={"year": "Year", "life_expectancy": "Life Expectancy (Years)"})
+
+fig.show()
+
+#GDP change
+fig_gdp = px.bar(country_df, 
+                 x="year", 
+                 y="gdp_per_capita", 
+                 title=f"GDP per Capita in {target_country} Over Time",
+                 labels={"gdp_per_capita": "GDP per Capita", "year": "Year"})
+fig_gdp.show()
+
+#population change
+fig_population = px.bar(country_df, 
+                 x="year", 
+                 y="population_millions", 
+                 title=f"Population in {target_country} Over Time",
+                 labels={"population": "Population", "year": "Year"})
+fig_population.show()
+```

@@ -1,0 +1,10 @@
+---
+title: "Gapminder Data Analysis"
+---
+
+The Gapminder dataset tracks health and wealth indicators for 142 countries over five decades （from 1952 to 2007）. It records values for life expectancy, GDP per capita, and population in every five years.
+
+### Quick Links:
+- [Life Expectancy and GDP per Capita](life-gdp.qmd)
+- [Life Expectancy and Population](life-population.qmd)
+- [Country Analysis](country.qmd)

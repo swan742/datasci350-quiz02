@@ -1,0 +1,33 @@
+---
+title: "Life Expectancy and Population"
+---
+
+The relationship between the size of a country's population and the average life expectancy of its citizens. 
+
+Research Question: We want to see if larger countries tend to have higher or lower life expectancy compared to smaller nations.
+
+```{python}
+#| label: fig-life-pop
+#| fig-cap: "Life Expectancy vs. Population (in Millions)"
+
+import pandas as pd
+import plotly.express as px
+
+df = pd.read_csv('gapminder.csv')
+
+fig = px.scatter(df, 
+                 x="population_millions", 
+                 y="life_expectancy",
+                 color="continent",
+                 hover_name="country",
+                 title="Relationship Between Population and Life Expectancy",
+                 labels={
+                     "population_millions": "Population (Millions)",
+                     "life_expectancy": "Life Expectancy (Years)"
+                 })
+
+fig.update_layout(xaxis_type="log")
+fig.show()
+```
+
+A slight positive correlation between population and life expectancy in all continents.

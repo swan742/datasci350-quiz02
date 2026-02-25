@@ -1,0 +1,19 @@
+---
+title: "Life Expectancy and GDP per Capita"
+---
+
+Introduction: This page explores how wealth (GDP) relates to how long people live.
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+df = pd.read_csv('gapminder.csv')
+fig = px.scatter(df, x="gdp_per_capita", y="life_expectancy", 
+                 size="population_millions", color="continent", 
+                 hover_name="country", log_x=True, 
+                 title="Life Expectancy vs GDP")
+fig.show()
+```
+
+Conclusion: Positive correlation between life expectancy and GDP in all continents, though with different intercepts and slopes.
